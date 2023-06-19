@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomNoActionBarTheme" parent="@style/Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/dodgerBlue</item>
+    </style>
+
+    <style name="CustomToolBarStyle">
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:colorControlNormal">@color/white</item>
+    </style>
+</resources>
