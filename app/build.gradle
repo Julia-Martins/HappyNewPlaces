@@ -34,6 +34,12 @@ android {
     buildFeatures{
         viewBinding true
     }
+
+    buildscript {
+        repositories {
+            mavenCentral()
+        }
+    }
 }
 
 dependencies {
@@ -42,8 +48,10 @@ dependencies {
     implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
-
     implementation 'com.karumi:dexter:6.2.3'
+
+    debugImplementation("com.infinum.dbinspector:dbinspector:5.4.9")
+    releaseImplementation("com.infinum.dbinspector:dbinspector-no-op:5.4.9")
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'

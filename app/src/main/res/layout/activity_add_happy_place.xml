@@ -60,6 +60,7 @@
                     android:inputType="textCapWords"
                     android:textColor="@color/navy"
                     android:textColorHint="@color/navy"
+
                     android:textSize="@dimen/edit_text_text_size"
                 />
 

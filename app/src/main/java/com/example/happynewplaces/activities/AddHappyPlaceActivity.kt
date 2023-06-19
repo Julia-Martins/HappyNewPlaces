@@ -61,6 +61,7 @@ class AddHappyPlaceActivity : AppCompatActivity(), View.OnClickListener {
 
             updateDateInView()
         }
+        updateDateInView()
 
         binding?.txtDate?.setOnClickListener(this)
         binding?.txtAddImage?.setOnClickListener(this)
