@@ -3,11 +3,11 @@
     android:shape="rectangle">
 
     <stroke
-        android:width="@dimen/img_border_stroke_size"
-        android:color="@color/border_img"
+        android:width="@dimen/image_border_stroke_size"
+        android:color="@color/black"
     />
 
     <solid android:color="@color/white"/>
 
-    <corners android:radius="@dimen/add_place_img_shape_radius" />
+    <corners android:radius="@dimen/add_place_image_shape_radius" />
 </shape>
