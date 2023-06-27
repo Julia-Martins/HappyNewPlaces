@@ -7,18 +7,27 @@
     android:layout_height="match_parent"
     tools:context=".activities.MainActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/tool_Main_place"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerHappyNewPlacesList"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        tools:visibility="gone"
 
-        android:background="@color/dodgerBlue"
-        android:theme="@style/CustomToolBarStyle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
     />
-    
+
+    <TextView
+        android:id="@+id/txtNoRecordsAvailable"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:gravity="center"
+        android:text="@string/note_text_no_happy_places_found_yet"
+        android:textSize="@dimen/no_records_available_text_size"
+        android:visibility="visible"
+        tools:visibility="visible"
+    />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAddHappyPlace"
         android:layout_width="wrap_content"
@@ -26,8 +35,8 @@
 
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@drawable/action_add_24"
         android:backgroundTint="@color/dodgerBlue"
+        app:srcCompat="@drawable/action_add_24"
     />
 
 </FrameLayout>

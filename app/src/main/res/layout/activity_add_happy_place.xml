@@ -14,6 +14,7 @@
 
         android:background="@color/dodgerBlue"
         android:theme="@style/CustomToolBarStyle"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"

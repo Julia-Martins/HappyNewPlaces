@@ -94,6 +94,7 @@ class AddHappyPlaceActivity : AppCompatActivity(), View.OnClickListener {
                 }
                 pictureDialog.show()
             }
+
             R.id.btnSave ->{
                 when{
                     binding?.txtTitle?.text.isNullOrEmpty() ->{
@@ -129,7 +130,8 @@ class AddHappyPlaceActivity : AppCompatActivity(), View.OnClickListener {
                             "Please select an image",
                             Toast.LENGTH_SHORT
                         ).show()
-                    }else ->{
+                    }
+                    else ->{
                         val happyPlaceModel = HappyPlaceModel(
                             0,
                             binding?.txtTitle?.text.toString(),
@@ -169,7 +171,7 @@ class AddHappyPlaceActivity : AppCompatActivity(), View.OnClickListener {
                     val contentURI = data.data
                     try{
                         val selectedImageBitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, contentURI)
-                        val saveImageToInternalStorage = saveImageToInternalStorage(selectedImageBitmap)
+                        saveImageToInternalStorage = saveImageToInternalStorage(selectedImageBitmap)
 
                         Log.e("Saved Image: ", "Path :: $saveImageToInternalStorage")
 
