@@ -8,8 +8,11 @@
     <color name="blue">#0000FF</color>
     <color name="navy">#000080</color>
 
-    <color name="circular_image_border_color">#757575</color>
-    <color name="item_happy_place_title_text_color">#0099FF</color>
+    <color name="circular_image_border_color">#000A5F</color>
+    <color name="item_happy_place_title_text_color">#000080</color>
     <color name="item_happy_place_description_text_color">#0E005E</color>
+    <color name="detail_screen_description_text_color">#000080</color>
+
+
 
 </resources>

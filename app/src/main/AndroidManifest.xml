@@ -19,21 +19,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HappyNewPlaces"
         tools:targetApi="31">
-
+        <activity
+            android:name=".activities.HappyPlaceDetailActivity"
+            android:label="HAPPY PLACES Details"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomNoActionBarTheme"
+            android:exported="false" />
         <activity
             android:name=".activities.AddHappyPlaceActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/CustomNoActionBarTheme"
-            android:label="ADD HAPPY PLACE"
             android:exported="false"
-        />
-
+            android:label="ADD HAPPY PLACE"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomNoActionBarTheme" />
         <activity
             android:name=".activities.MainActivity"
-            android:screenOrientation="portrait"
+            android:exported="true"
             android:label="@string/main_name"
-            android:theme="@style/CustomNoActionBarTheme"
-            android:exported="true">
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomNoActionBarTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

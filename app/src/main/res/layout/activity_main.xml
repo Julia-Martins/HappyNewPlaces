@@ -7,13 +7,27 @@
     android:layout_height="match_parent"
     tools:context=".activities.MainActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tool_main_place"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+
+        android:background="@color/dodgerBlue"
+        android:theme="@style/CustomToolBarStyle"
+
+        app:title="@string/main_name"
+
+        android:layout_gravity="top|start"
+    />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerHappyNewPlacesList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone"
+        android:visibility="visible"
         tools:visibility="gone"
 
+        android:layout_marginTop="70dp"
     />
 
     <TextView

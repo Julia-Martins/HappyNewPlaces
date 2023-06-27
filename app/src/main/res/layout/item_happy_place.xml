@@ -6,21 +6,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/tool_main_place"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-
-        android:background="@color/dodgerBlue"
-        android:theme="@style/CustomToolBarStyle"
-
-        app:title="@string/main_name"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-    />
-
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,7 +17,8 @@
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tool_main_place"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         >
 
         <LinearLayout
@@ -50,6 +36,7 @@
                 android:contentDescription="@string/edit_text_hint_description"
                 android:src="@mipmap/ic_launcher_round"
                 app:civ_border_color="@color/circular_image_border_color"
+                app:civ_border_width="1dp"
             />
             
             <LinearLayout
