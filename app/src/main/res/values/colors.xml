@@ -11,7 +11,7 @@
     <color name="circular_image_border_color">#000A5F</color>
     <color name="item_happy_place_title_text_color">#000080</color>
     <color name="item_happy_place_description_text_color">#0E005E</color>
-    <color name="detail_screen_description_text_color">#000080</color>
+    <color name="detail_screen_description_text_color">#0000FF</color>
 
 
 

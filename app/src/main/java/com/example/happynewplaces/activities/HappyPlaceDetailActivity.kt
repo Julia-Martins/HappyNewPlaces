@@ -1,12 +1,38 @@
 package com.example.happynewplaces.activities
 
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.happynewplaces.R
+import com.example.happynewplaces.databinding.ActivityHappyPlaceDetailBinding
+import com.example.happynewplaces.models.HappyPlaceModel
 
 class HappyPlaceDetailActivity : AppCompatActivity() {
+    private var binding: ActivityHappyPlaceDetailBinding? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_happy_place_detail)
+        binding = ActivityHappyPlaceDetailBinding.inflate(layoutInflater)
+        setContentView(binding?.root)
+
+        var happyPlaceDetailModel: HappyPlaceModel? = null
+
+        if (intent.hasExtra(MainActivity.EXTRA_PLACE_DETAILS)){
+            happyPlaceDetailModel = intent.getSerializableExtra(
+                MainActivity.EXTRA_PLACE_DETAILS
+            ) as HappyPlaceModel
+
+            if (happyPlaceDetailModel != null){
+                setSupportActionBar(binding?.toolDetailPlace)
+                supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+                supportActionBar!!.title = happyPlaceDetailModel.title
+
+                binding?.toolDetailPlace?.setNavigationOnClickListener {
+                    onBackPressed()
+                }
+
+                binding?.imgPlaceDetail?.setImageURI(Uri.parse(happyPlaceDetailModel.image))
+                binding?.txtDescriptionDetail?.text = happyPlaceDetailModel.description
+                binding?.txtLocationDetail?.text = happyPlaceDetailModel.location
+            }
+        }
     }
 }

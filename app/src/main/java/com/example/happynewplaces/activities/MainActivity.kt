@@ -37,6 +37,17 @@ class MainActivity : AppCompatActivity() {
         val placesAdapter = HappyPlaceAdapter(this@MainActivity, happyPlaceList)
 
         binding?.recyclerHappyNewPlacesList?.adapter = placesAdapter
+
+        placesAdapter.setOnClickListener(object: HappyPlaceAdapter.onClickListener{
+            override fun onClick(position: Int, model: HappyPlaceModel) {
+                val intent = Intent(this@MainActivity,
+                    HappyPlaceDetailActivity::class.java)
+
+                intent.putExtra(EXTRA_PLACE_DETAILS, model)
+
+                startActivity(intent)
+            }
+        })
     }
 
     private fun getHappyPlacesListFromLocalDB(){
@@ -70,6 +81,7 @@ class MainActivity : AppCompatActivity() {
 
     companion object{
         var ADD_PLACE_ACTIVITY_REQUEST_CODE = 1
+        var EXTRA_PLACE_DETAILS = "Extra Place Details"
     }
 }
 
