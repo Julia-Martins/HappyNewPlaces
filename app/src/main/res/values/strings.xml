@@ -11,5 +11,10 @@
     <string name="btn_text_save">SAVE</string>
 
     <string name="note_text_no_happy_places_found_yet">No Happy Places Fond Yet. Kindly add one.</string>
+    <string name="title_activity_maps">MapsActivity</string>
 
+    <string name="google_maps_api">AIzaSyCjJ_Ga_hsUxKL42cVgak4F4K4ffl9R-88</string>
+
+    <string name="btn_text_view_on_map">View on Map</string>
+    <string name="add_place_select_current_location_text">SELECT CURRENT LOCATION</string>
 </resources>

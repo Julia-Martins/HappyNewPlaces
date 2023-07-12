@@ -1,14 +1,19 @@
 package com.example.happynewplaces.adapters
 
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.happynewplaces.R
-import com.example.happynewplaces.models.HappyPlaceModel
+import com.example.happynewplaces.activities.AddHappyPlaceActivity
+import com.example.happynewplaces.activities.MainActivity
+import com.example.happynewplaces.database.DataBaseHandler
 import com.example.happynewplaces.databinding.ItemHappyPlaceBinding
+import com.example.happynewplaces.models.HappyPlaceModel
 
 open class HappyPlaceAdapter(
     private val context: Context,
@@ -49,6 +54,26 @@ open class HappyPlaceAdapter(
             }
         }
     }
+
+    fun notifyEditItem(activity: Activity, position: Int, requestCode: Int){
+        val intent = Intent(context, AddHappyPlaceActivity::class.java)
+
+        intent.putExtra(MainActivity.EXTRA_PLACE_DETAILS, list[position])
+        activity.startActivityForResult(intent, requestCode)
+        notifyItemChanged(position)
+    }
+
+    fun removeItem(position: Int){
+        val dbHandler = DataBaseHandler(context)
+        val isDeleted = dbHandler.deleteHappyPlace(list[position])
+
+        if (isDeleted > 0){
+            list.removeAt(position)
+            notifyItemRemoved(position)
+        }
+
+    }
+
     override fun getItemCount(): Int {
         return list.size
     }

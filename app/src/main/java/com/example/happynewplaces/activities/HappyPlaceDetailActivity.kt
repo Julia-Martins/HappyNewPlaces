@@ -1,5 +1,6 @@
 package com.example.happynewplaces.activities
 
+import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -16,7 +17,7 @@ class HappyPlaceDetailActivity : AppCompatActivity() {
         var happyPlaceDetailModel: HappyPlaceModel? = null
 
         if (intent.hasExtra(MainActivity.EXTRA_PLACE_DETAILS)){
-            happyPlaceDetailModel = intent.getSerializableExtra(
+            happyPlaceDetailModel = intent.getParcelableExtra<HappyPlaceModel>(
                 MainActivity.EXTRA_PLACE_DETAILS
             ) as HappyPlaceModel
 
@@ -32,6 +33,14 @@ class HappyPlaceDetailActivity : AppCompatActivity() {
                 binding?.imgPlaceDetail?.setImageURI(Uri.parse(happyPlaceDetailModel.image))
                 binding?.txtDescriptionDetail?.text = happyPlaceDetailModel.description
                 binding?.txtLocationDetail?.text = happyPlaceDetailModel.location
+
+                binding?.btnViewOnMapDetail?.setOnClickListener {
+                    val intent = Intent(this, MapActivity::class.java)
+
+                    intent.putExtra(MainActivity.EXTRA_PLACE_DETAILS, happyPlaceDetailModel)
+
+                    startActivity(intent)
+                }
             }
         }
     }

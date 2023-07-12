@@ -90,8 +90,17 @@
                 android:id="@+id/btnViewOnMapDetail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
                 android:layout_gravity="center"
+                android:layout_marginStart="@dimen/detail_screen_btn_view_on_map_marginStartEnd"
+                android:layout_marginTop="@dimen/detail_screen_btn_view_on_map_marginTop"
+                android:layout_marginEnd="@dimen/detail_screen_btn_view_on_map_marginStartEnd"
+                android:backgroundTint="@color/dodgerBlue"
+                android:gravity="center"
+                android:paddingTop="@dimen/detail_screen_btn_view_on_map_PaddingTopBottom"
+                android:paddingBottom="@dimen/detail_screen_btn_view_on_map_PaddingTopBottom"
+                android:text="@string/btn_text_view_on_map"
+                android:textColor="@color/white"
+                android:textSize="@dimen/detail_screen_btn_view_on_map_text_size"
 
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
